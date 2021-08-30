@@ -35,6 +35,11 @@ public class RunAddressBook {
             menu();
             choice = stdin.nextInt();
         }
+        else if (choice == 2){
+            System.out.println("what is the first name of the contact yo want to delete: ");
+            String firstname = stdin.next();
+            contactList.deleteContact(firstname);
+        }
         else
             System.out.println("sorry, unable to create/add your contact.");
 

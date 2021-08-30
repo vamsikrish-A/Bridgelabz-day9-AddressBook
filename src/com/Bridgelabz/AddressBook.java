@@ -16,4 +16,15 @@ public class AddressBook {
     public void addContact(Contactbook c) {
         contactList.add(c);
     }
+    private int haveContact(String s) {
+        for (int i=0; i < contactList.size(); i++)
+            if (contactList.get(i).getFirstName().equals(s))
+                return i;
+        return -1;
+    }
+    public void deleteContact(String s) {
+        int place = haveContact(s);
+        if (place >= 0)
+            contactList.remove(place);
+    }
 }
