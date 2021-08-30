@@ -27,8 +27,11 @@ public class AddressBook {
         if (place >= 0)
             contactList.remove(place);
     }
+    public int numContacts() {
+        return contactList.size();
+    }
     public void printContacts() {
-        //for (int i = 0; i < contactList.size(); i++)//
+        for (int i = 0; i < contactList.size(); i++)
             System.out.println(contactList);
     }
 }
