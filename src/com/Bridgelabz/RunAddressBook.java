@@ -11,38 +11,37 @@ public class RunAddressBook {
 
         menu();
         int choice = stdin.nextInt();
+        while (choice != 5) {
 
-        if (choice == 1) {
-            System.out.println("Enter first name: ");
-            String firstName = stdin.next();
-            System.out.println("Enter last name: ");
-            String lastName = stdin.next();
-            System.out.println("Enter address: ");
-            String address = stdin.next();
-            System.out.println("Enter city name: ");
-            String city = stdin.next();
-            System.out.println("Enter state name: ");
-            String state = stdin.next();
-            System.out.println("Enter zipcode: ");
-            int zip = stdin.nextInt();
-            System.out.println("Enter phone number: ");
-            long phone = stdin.nextLong();
-            System.out.println("Enter Email ID: ");
-            String email = stdin.next();
+            if (choice == 1) {
+                System.out.println("Enter first name: ");
+                String firstName = stdin.next();
+                System.out.println("Enter last name: ");
+                String lastName = stdin.next();
+                System.out.println("Enter address: ");
+                String address = stdin.next();
+                System.out.println("Enter city name: ");
+                String city = stdin.next();
+                System.out.println("Enter state name: ");
+                String state = stdin.next();
+                System.out.println("Enter zipcode: ");
+                int zip = stdin.nextInt();
+                System.out.println("Enter phone number: ");
+                long phone = stdin.nextLong();
+                System.out.println("Enter Email ID: ");
+                String email = stdin.next();
 
-            contactList.addContact(new Contactbook(firstName,lastName,address,city,state,zip,phone,email));
+                contactList.addContact(new Contactbook(firstName, lastName, address, city, state, zip, phone, email));
 
-            menu();
-            choice = stdin.nextInt();
+                menu();
+                choice = stdin.nextInt();
+            } else if (choice == 2) {
+                System.out.println("what is the first name of the contact yo want to delete: ");
+                String firstname = stdin.next();
+                contactList.deleteContact(firstname);
+            } else
+                System.out.println("sorry, unable to create/add your contact.");
         }
-        else if (choice == 2){
-            System.out.println("what is the first name of the contact yo want to delete: ");
-            String firstname = stdin.next();
-            contactList.deleteContact(firstname);
-        }
-        else
-            System.out.println("sorry, unable to create/add your contact.");
-
     }
 
     public static void menu() {
