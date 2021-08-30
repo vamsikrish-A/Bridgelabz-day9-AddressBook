@@ -39,7 +39,10 @@ public class RunAddressBook {
                 System.out.println("what is the first name of the contact yo want to delete: ");
                 String firstname = stdin.next();
                 contactList.deleteContact(firstname);
-            } else
+            }
+            else if (choice == 3)
+                contactList.printContacts();
+            else
                 System.out.println("sorry, unable to create/add your contact.");
         }
     }
